@@ -23,9 +23,30 @@ body {
   font-size: 16px;
 }
 
-// ------- Header  -------
-.header {
+//------- Refactor -----------------------------------
+
+.header,
+.main--input-div {
   display: flex;
+}
+
+.main--input-text,
+.main--input-field,
+.main--button {
+  font-size: 1rem;
+}
+
+.main--input-field,
+.main--button {
+  width: 98%;
+  border-radius: 1rem;
+  border: none;
+  height: 3.8rem;
+}
+//--------------------------------------------------------
+
+// ------- Header  -----------------------------------
+.header {
   align-items: center;
   height: 5.5rem;
   width: 100%;
@@ -49,33 +70,26 @@ body {
   font-weight: 300;
   font-size: 0.7rem;
 }
-//----------------------------
+//--------------------------------------------------------
 
-// Main Component 
+// --------- Main Component ---------------------------
 .main {
   margin: 5rem 2rem;
 }
 
 .main--input-div {
-  display: flex;
   flex-direction: column;
   align-items: start;
 }
 
 .main--input-text {
-  font-size: 1rem;
   margin: .5em;
 }
 
 .main--input-field {
-  border: none;
   padding: 0 .5rem;
-  width: 98%;
-  height: 3.8rem;
-  border-radius: 1rem;
   outline: none;
   font-weight: bold;
-  font-size: 1rem;
   color: var(--primary-dark);
   caret-color: var(--primary);
   box-shadow: var(--inner-shadow);
@@ -83,15 +97,10 @@ body {
 }
 
 .main--button {
-  width: 98%;
   margin: 2rem 0;
-  height: 3.8rem;
-  border: none;
   background-color: var(--primary-dark);
-  border-radius: 1rem;
   color: var(--white);
   letter-spacing: 0.05rem;
-  font-size: 1rem;
 }
 
 .main--button :hover {
@@ -102,8 +111,9 @@ body {
   width: 97%;
   border-radius: 1rem;
 }
+// ------------------------------------------------------
 
-// ------- media queries -------
+// ------- media queries ----------------------------
 @media (min-width:480px) {
   .header--title {
     font-size: 2rem;
@@ -124,7 +134,9 @@ body {
     max-width: 500px;
   }
 
-  .main--input-text, .main--input-field {
+  .main--input-text, 
+  .main--input-field {
     font-size: 1.5rem;
   }
 }
+// ---------------------------------------------

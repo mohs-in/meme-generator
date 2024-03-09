@@ -4,6 +4,7 @@
 
 #root {
   padding: 0;
+  margin: 0;
   --primary: #A626D3;
   --primary-dark: #672280;
   --white: #fff;
@@ -11,21 +12,23 @@
 		inset -.2rem -.2rem .5rem var(--white);
   --greyLight-1: #eee9f5;
   --greyLight-2: #c8d0e7;
-  --lr-grad: 90deg, var(--primary-dark) 10%, var(--primary) 100%
+  --lr-grad: 90deg, var(--primary-dark) 10%, var(--primary) 100%;
+  background: var(--greyLight-1);
+  height: 100vh;
 }
 
 body {
   font-family: "Karla", sans-serif;
   margin: 0;
   font-size: 16px;
-  background: var(--greyLight-1);
 }
 
 // ------- Header  -------
 .header {
   display: flex;
   align-items: center;
-  height: 4rem;
+  height: 5.5rem;
+  width: 100%;
   background: linear-gradient(var(--lr-grad));
   color: var(--greyLight-1);
   padding: 1.25em;
@@ -37,20 +40,20 @@ body {
 }
 
 .header--title {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-right: auto;
   letter-spacing: -.1rem;
 }
 
 .header--project {
   font-weight: 300;
-  font-size: .75rem;
+  font-size: 0.7rem;
 }
 //----------------------------
 
 // Main Component 
 .main {
-  margin: 2rem;
+  margin: 5rem 2rem;
 }
 
 .main--input-div {
@@ -72,12 +75,56 @@ body {
   border-radius: 1rem;
   outline: none;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--primary-dark);
   caret-color: var(--primary);
   box-shadow: var(--inner-shadow);
   background: var(--greyLight-1);
 }
 
+.main--button {
+  width: 98%;
+  margin: 2rem 0;
+  height: 3.8rem;
+  border: none;
+  background-color: var(--primary-dark);
+  border-radius: 1rem;
+  color: var(--white);
+  letter-spacing: 0.05rem;
+  font-size: 1rem;
+}
 
+.main--button :hover {
+  cursor: pointer;
+}
 
+.main--img {
+  width: 97%;
+  border-radius: 1rem;
+}
+
+// ------- media queries -------
+@media (min-width:480px) {
+  .header--title {
+    font-size: 2rem;
+  }
+
+  .header--project {
+    font-size: 1rem;
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main {
+    max-width: 500px;
+  }
+
+  .main--input-text, .main--input-field {
+    font-size: 1.5rem;
+  }
+}

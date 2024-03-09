@@ -8,10 +8,10 @@ function Hero() {
                 <div className="main--input">
                     <div className="main--input-div">
                         <label className="main--input-text">Top Text</label>
-                        <input className="main--input-field" type="text" /></div>
+                        <input className="main--input-field" type="text" placeholder="Shut up"/></div>
                     <div className="main--input-div">
                         <label className="main--input-text">Bottom Text</label>
-                        <input className="main--input-field" type='text' /></div>
+                        <input className="main--input-field" type='text' placeholder="And take my money"/></div>
                 </div>
                 <div>
                     <button className="main--button">Get a new meme image</button>

@@ -1,7 +1,16 @@
-import { getImageUrl } from "../src/imgs"
+import { useState } from "react";
+import memesData from '../src/memesData'
+
 
 
 function Hero() {
+    const [imgLink, setImgLink] = useState("https://i.imgflip.com/1bhk.jpg")
+
+    function getImageLink() {
+        const memesArray = memesData.data.memes;
+        const randomNumber = Math.floor(Math.random()*memesArray.length);
+        setImgLink(memesArray[randomNumber].url)
+    }
     return (
         <main>
             <div className="main">
@@ -14,11 +23,11 @@ function Hero() {
                         <input className="main--input-field" type='text' placeholder="And take my money"/></div>
                 </div>
                 <div>
-                    <button className="main--button">Get a new meme image</button>
+                    <button className="main--button" onClick={getImageLink}>Get a new meme image</button>
                 </div>
-                <div>
-                    <img className='main--img' src={getImageUrl('g1')} alt="Meme"  />
-                </div>
+                    <div>
+                        <img className='main--img' src={imgLink} alt="Random Meme"  />
+                    </div>  
             </div>
         </main>
     )

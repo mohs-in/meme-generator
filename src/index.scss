@@ -14,7 +14,7 @@
   --greyLight-2: #c8d0e7;
   --lr-grad: 90deg, var(--primary-dark) 10%, var(--primary) 100%;
   background: var(--greyLight-1);
-  height: 100%;
+  height: 100vh;
 }
 
 body {
@@ -74,7 +74,7 @@ body {
 
 // --------- Main Component ---------------------------
 .main {
-  margin: 5rem 2rem;
+  margin: 2rem 2rem;
 }
 
 .main--input-div {
@@ -110,11 +110,17 @@ body {
 .main--img {
   width: 97%;
   border-radius: 1rem;
+  max-width: inherit;
+  max-height: 29rem;
 }
 // ------------------------------------------------------
 
 // ------- media queries ----------------------------
 @media (min-width:480px) {
+  #root {
+    height: 100vh
+  }
+
   .header--title {
     font-size: 2rem;
   }
@@ -131,12 +137,23 @@ body {
   }
 
   .main {
-    max-width: 500px;
+    max-width: 31em;
+  }
+
+  .main--img {
+    max-width: 27rem;
+    max-height: 23rem;
   }
 
   .main--input-text, 
   .main--input-field {
     font-size: 1.5rem;
+  }
+
+  .main--button,
+  .main--input-field {
+    min-width: 27rem;
+    max-width: 27rem;
   }
 }
 // ---------------------------------------------

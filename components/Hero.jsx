@@ -4,8 +4,13 @@ import memesData from '../src/memesData'
 
 
 function Hero() {
-    const [imgLink, setImgLink] = useState("https://i.imgflip.com/1bhk.jpg")
+    const [meme, setMeme] = useState({
+        topName: '',
+        bottomName: '',
+        randomImage:'https://i.imgflip.com/1bhk.jpg'
+    })
 
+    const [allMemeImages, setAllMemeImages] = useState(memesData)
     function getImageLink() {
         const memesArray = memesData.data.memes;
         const randomNumber = Math.floor(Math.random()*memesArray.length);
@@ -26,7 +31,7 @@ function Hero() {
                     <button className="main--button" onClick={getImageLink}>Get a new meme image</button>
                 </div>
                     <div>
-                        <img className='main--img' src={imgLink} alt="Random Meme"  />
+                        <img className='main--img' src={meme.randomImage} alt="Random Meme"  />
                     </div>  
             </div>
         </main>

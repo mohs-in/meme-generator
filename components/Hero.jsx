@@ -12,9 +12,13 @@ function Hero() {
 
     const [allMemeImages, setAllMemeImages] = useState(memesData)
     function getImageLink() {
-        const memesArray = memesData.data.memes;
+        const memesArray = allMemeImages.data.memes;
         const randomNumber = Math.floor(Math.random()*memesArray.length);
-        setImgLink(memesArray[randomNumber].url)
+        const url = memesArray[randomNumber].url;
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            randomImage: url
+        }))
     }
     return (
         <main>

@@ -28,7 +28,6 @@ function Hero() {
             ...prevMeme,
             [name] : value
         }))
-        console.log(value)
     }
     return (
         <main>
@@ -61,8 +60,8 @@ function Hero() {
                 </div>
                 <div className="meme">
                     <img className='meme--img' src={meme.randomImage} alt="Random Meme"  />
-                    <h2 className="meme--text top">One cannot simply </h2>
-                    <h2 className="meme--text bottom">Walk into mordor</h2>
+                    <h2 className="meme--text top">{meme.topText}</h2>
+                    <h2 className="meme--text bottom">{meme.bottomText}</h2>
                 </div>  
             </div>
         </main>
